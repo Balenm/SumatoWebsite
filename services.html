@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Sumato Consulting Inc.</title>
+    <meta name="description" content="Explore Sumato Consulting's comprehensive IT services including AI & ML solutions, digital transformation, data analytics, IT infrastructure optimization, DevOps, and ERP implementation.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Adding a background image to the services page header -->
+    <style>
+        .page-header {
+            background-image: url('images/downloaded/business-advisory.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 160px 0 80px;
+            color: #fff;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+            padding-top: 20px;
+        }
+        
+        .page-header h1, 
+        .page-header .breadcrumb,
+        .page-header .breadcrumb a {
+            color: #fff;
+        }
+        
+        /* Enhanced services page styling */
+        .service-introduction {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        
+        .service-introduction .section-header {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            border: none;
+        }
+        
+        .service-introduction .section-title {
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+            padding-bottom: 15px;
+            border: none;
+        }
+        
+        .service-introduction .section-title:after {
+            display: none;
+        }
+        
+        .service-detail {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .service-detail:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .service-feature {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .service-feature-content,
+        .service-feature-image {
+            flex: 1;
+        }
+        
+        .service-feature-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #0056b3;
+            position: relative;
+            padding-bottom: 15px;
+            border: none;
+        }
+        
+        .service-feature-content h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #0056b3;
+            display: none;
+        }
+        
+        .service-feature-content p {
+            margin-bottom: 25px;
+            color: #495057;
+            line-height: 1.7;
+        }
+        
+        .service-feature-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-feature-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .service-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0 0;
+        }
+        
+        .service-feature-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        
+        .service-feature-list i {
+            color: #0056b3;
+            font-size: 1.1rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        .service-feature-list div {
+            flex: 1;
+        }
+        
+        .service-feature-list strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .service-feature-list p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.3rem;
+            position: relative;
+            border: none;
+        }
+        
+        .cta-content h2:after {
+            display: none;
+        }
+        
+        .cta-content p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .service-feature {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .service-feature-content,
+            .service-feature-image {
+                width: 100%;
+            }
+            
+            .service-detail:nth-child(even) .service-feature {
+                flex-direction: column;
+            }
+            
+            .service-feature-image {
+                order: 1;
+            }
+            
+            .service-feature-content {
+                order: 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-detail {
+                padding: 60px 0;
+            }
+            
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .service-feature-list li {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .service-feature-list i {
+                margin-bottom: 5px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-detail {
+                padding: 50px 0;
+            }
+            
+            .service-introduction {
+                padding: 50px 0 30px;
+            }
+            
+            .cta-section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="container">
+                <nav class="navbar">
+                    <a href="index.html" class="logo">
+                        <picture>
+                            <source srcset="images/sumato-logo.svg" type="image/svg+xml">
+                            <img src="images/sumato-logo.png" alt="Sumato Consulting Logo" width="180" height="45">
+                        </picture>
+                    </a>
+                    <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="btn btn-primary">Get Started</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 data-aos="fade-up">Our Services</h1>
+                <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                    <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item active">Services</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Introduction -->
+        <section class="service-introduction">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Comprehensive IT Solutions</h2>
+                    <p class="section-subtitle">We deliver tailored technology services to help your business thrive in the digital age</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Detail: AI and ML Solutions -->
+        <section class="service-detail" id="ai-ml">
+            <div class="container">
+                <div class="service-feature" data-aos="fade-up">
+                    <div class="service-feature-content">
+                        <h3>AI and Machine Learning Solutions</h3>
+                        <p>Harness the power of artificial intelligence and machine learning to gain actionable insights, automate processes, and drive innovation across your organization. Our AI and ML solutions are designed to solve complex business challenges and create new opportunities for growth.</p>
+                        <p>Whether you're looking to implement predictive analytics, natural language processing, or computer vision capabilities, our team of experts will work with you to develop and deploy custom AI solutions that deliver measurable results.</p>
+                        <ul class="service-feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Predictive Analytics</strong>
+                                    <p>Forecast trends and outcomes to make data-driven decisions and stay ahead of market changes.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Natural Language Processing</strong>
+                                    <p>Extract insights from text data and enhance customer interactions with intelligent chatbots and sentiment analysis.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Computer Vision</strong>
+                                    <p>Automate visual inspection processes and extract valuable information from images and video.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>AI Strategy Development</strong>
+                                    <p>Create a roadmap for successfully implementing AI throughout your business operations.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service-feature-image" data-aos="fade-left">
+                        <img src="images/downloaded/AI-ML.jpg" alt="AI and Machine Learning Solutions">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Detail: Digital Transformation -->
+        <section class="service-detail" id="digital-transformation">
+            <div class="container">
+                <div class="service-feature" data-aos="fade-up">
+                    <div class="service-feature-image" data-aos="fade-right">
+                        <img src="images/downloaded/digital-transformation.jpg" alt="Digital Transformation">
+                    </div>
+                    <div class="service-feature-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Transform your business operations and customer experiences through strategic digital initiatives. Our digital transformation services help organizations adapt to changing market conditions, leverage emerging technologies, and create new value propositions.</p>
+                        <p>We take a holistic approach to digital transformation, considering your people, processes, and technology to ensure successful adoption and sustainable results. Our experts will guide you through every step of your digital journey, from strategy development to implementation and beyond.</p>
+                        <ul class="service-feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Digital Strategy Development</strong>
+                                    <p>Create a comprehensive roadmap to guide your organization's digital transformation journey.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Process Automation</strong>
+                                    <p>Streamline operations and reduce costs by automating repetitive tasks and workflows.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Customer Experience Enhancement</strong>
+                                    <p>Design and implement digital solutions that create seamless, personalized customer journeys.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Digital Workplace Solutions</strong>
+                                    <p>Enable remote work and collaboration with modern workplace technologies.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Detail: Data Analytics -->
+        <section class="service-detail" id="data-analytics">
+            <div class="container">
+                <div class="service-feature" data-aos="fade-up">
+                    <div class="service-feature-content">
+                        <h3>Data Analytics and Business Intelligence</h3>
+                        <p>Turn your data into a strategic asset with our comprehensive data analytics and business intelligence solutions. We help organizations collect, process, analyze, and visualize data to uncover valuable insights and drive informed decision-making.</p>
+                        <p>Our data experts work with you to establish robust data governance frameworks, implement modern analytics platforms, and develop custom dashboards and reports that deliver actionable intelligence to stakeholders across your organization.</p>
+                        <ul class="service-feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Data Strategy and Governance</strong>
+                                    <p>Establish frameworks for managing data as a strategic asset across your organization.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Data Warehouse Implementation</strong>
+                                    <p>Design and deploy scalable data storage solutions that integrate data from multiple sources.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Business Intelligence Dashboards</strong>
+                                    <p>Create interactive visualizations and reports that make complex data easy to understand.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Advanced Analytics</strong>
+                                    <p>Apply statistical and machine learning techniques to uncover hidden patterns and predict future trends.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service-feature-image" data-aos="fade-left">
+                        <img src="images/downloaded/data-analytics.jpg" alt="Data Analytics and Business Intelligence">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Detail: IT Infrastructure -->
+        <section class="service-detail" id="it-infrastructure">
+            <div class="container">
+                <div class="service-feature" data-aos="fade-up">
+                    <div class="service-feature-image" data-aos="fade-right">
+                        <img src="images/downloaded/tech-consulting.jpg" alt="IT Infrastructure Optimization">
+                    </div>
+                    <div class="service-feature-content">
+                        <h3>IT Infrastructure Optimization</h3>
+                        <p>Build a robust, scalable, and secure IT foundation that supports your business goals. Our IT infrastructure optimization services help organizations modernize their technology stack, improve performance, and reduce operational costs.</p>
+                        <p>Whether you're migrating to the cloud, implementing hybrid infrastructure, or enhancing your on-premises systems, our experienced engineers will design and implement solutions that align with your business requirements and provide the agility needed in today's fast-paced environment.</p>
+                        <ul class="service-feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Cloud Migration and Adoption</strong>
+                                    <p>Transition workloads to the cloud securely and efficiently to increase flexibility and scalability.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Network Design and Optimization</strong>
+                                    <p>Implement high-performance, reliable network solutions that support your business applications.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Infrastructure Security</strong>
+                                    <p>Protect your systems and data with comprehensive security measures and best practices.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Disaster Recovery Planning</strong>
+                                    <p>Ensure business continuity with robust backup and recovery solutions.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Detail: DevOps -->
+        <section class="service-detail" id="devops">
+            <div class="container">
+                <div class="service-feature" data-aos="fade-up">
+                    <div class="service-feature-content">
+                        <h3>DevOps and CI/CD</h3>
+                        <p>Accelerate software delivery and improve quality with our DevOps and Continuous Integration/Continuous Deployment (CI/CD) services. We help organizations adopt modern development practices that break down silos between development and operations teams, enabling faster and more reliable releases.</p>
+                        <p>Our DevOps engineers work with you to implement automation pipelines, infrastructure as code, monitoring solutions, and other practices that streamline your software delivery process and foster a culture of collaboration and continuous improvement.</p>
+                        <ul class="service-feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>CI/CD Pipeline Implementation</strong>
+                                    <p>Automate build, test, and deployment processes to deliver software faster and with fewer errors.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Infrastructure as Code</strong>
+                                    <p>Manage infrastructure through code to ensure consistency and enable version control.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Containerization</strong>
+                                    <p>Implement Docker, Kubernetes, and other container technologies for flexible application deployment.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Monitoring and Observability</strong>
+                                    <p>Set up comprehensive monitoring to quickly identify and resolve issues in production.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service-feature-image" data-aos="fade-left">
+                        <img src="images/downloaded/Devops.jpg" alt="DevOps and CI/CD">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Detail: ERP -->
+        <section class="service-detail" id="erp">
+            <div class="container">
+                <div class="service-feature" data-aos="fade-up">
+                    <div class="service-feature-image" data-aos="fade-right">
+                        <img src="images/downloaded/Process-Optimization.jpg" alt="ERP Implementation">
+                    </div>
+                    <div class="service-feature-content">
+                        <h3>ERP Implementation</h3>
+                        <p>Streamline your business operations with enterprise resource planning (ERP) solutions that integrate your core business processes. Our ERP implementation services help organizations select, configure, and deploy ERP systems that align with their specific needs and drive operational excellence.</p>
+                        <p>From requirement analysis and system selection to implementation, testing, and training, our experienced consultants guide you through every step of the ERP journey, ensuring a smooth transition and maximizing the return on your investment.</p>
+                        <ul class="service-feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>ERP Strategy and Selection</strong>
+                                    <p>Define requirements and evaluate ERP systems to find the best fit for your business.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Implementation and Configuration</strong>
+                                    <p>Configure and customize ERP systems to match your business processes and requirements.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Data Migration</strong>
+                                    <p>Transfer your existing business data to the new ERP system with minimal disruption.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Training and Change Management</strong>
+                                    <p>Prepare your team for the new system with comprehensive training and change management support.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Detail: Process Automation -->
+        <section class="service-detail" id="process-automation">
+            <div class="container">
+                <div class="service-feature" data-aos="fade-up">
+                    <div class="service-feature-content">
+                        <h3>Process Automation</h3>
+                        <p>Process Automation transforms how we work—eliminating repetitive tasks, increasing productivity, and allowing teams to focus on high-value activities. By automating manual processes, we streamline operations, improve service delivery, and enhance compliance across the organization.</p>
+                        <p>Our comprehensive approach to automation combines industry best practices with cutting-edge technology to identify, design, and implement automation solutions that deliver immediate and long-term benefits. From simple task automation to complex enterprise workflows, we help you achieve operational excellence through intelligent automation.</p>
+                        <ul class="service-feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Robotic Process Automation (RPA)</strong>
+                                    <p>Deploy software robots to handle repetitive, rule-based tasks with greater speed, accuracy, and consistency than manual processing.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Workflow Automation</strong>
+                                    <p>Streamline complex business processes by automating approvals, notifications, and task assignments across departments.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Intelligent Document Processing</strong>
+                                    <p>Extract, classify, and process data from documents using AI and machine learning to reduce manual handling and errors.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Integration and Orchestration</strong>
+                                    <p>Connect disparate systems and applications to create seamless automated processes that span your entire technology ecosystem.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service-feature-image" data-aos="fade-left">
+                        <img src="images/downloaded/Process-Optimization.jpg" alt="Process Automation">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="fade-up">
+                    <h2>Ready to transform your business?</h2>
+                    <p>Schedule a free consultation with our experts and discover how Sumato Consulting can help you achieve your business goals with our comprehensive IT solutions.</p>
+                    <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer" style="background-color: #343a40; color: #fff; padding: 60px 0 0;">
+        <div class="container">
+            <div class="row" style="display: flex; flex-wrap: wrap;">
+                <!-- Column 1: Logo and description -->
+                <div class="footer-col" style="flex: 0 0 33%; padding-right: 30px; margin-bottom: 30px;">
+                    <a href="index.html" class="footer-logo" style="display: block; text-align: left; margin-bottom: 15px;">
+                        <img src="images/sumato-logo-white-fixed.svg" alt="Sumato Consulting Logo" width="180" height="60" style="margin-left: 0;">
+                    </a>
+                    <p style="margin-bottom: 20px; line-height: 1.6; color: #adb5bd; font-size: 14px;">
+                        Empowering business transformation with expert advisory services and innovative solutions for sustainable growth.
+                    </p>
+                    <div style="display: flex; align-items: center; color: #adb5bd; font-size: 14px;">
+                        <a href="https://www.linkedin.com/company/sumatoconsulting" target="_blank" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; transition: color 0.3s ease;">
+                            <i class="fab fa-linkedin-in" style="font-size: 16px; margin-right: 10px; color: #0056b3;"></i>
+                            <span style="transition: color 0.3s ease;">Connect with us on LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col" style="flex: 0 0 20%; margin-bottom: 30px;">
+                    <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Company</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;"><a href="about.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">About Us</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Services</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about.html#careers" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Careers</a></li>
+                        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Services -->
+                <div class="footer-col" style="flex: 0 0 20%; margin-bottom: 30px;">
+                    <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Services</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;"><a href="services.html#ai-ml" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">AI & ML Solutions</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#digital-transformation" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Digital Transformation</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#data-analytics" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Data Analytics</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#it-infrastructure" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">IT Infrastructure</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#devops" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">DevOps & CI/CD</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#erp" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">ERP Implementation</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#process-automation" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Process Automation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col" style="flex: 0 0 27%; margin-bottom: 30px;">
+                    <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Contact Us</h4>
+                    <div style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                        <i class="fas fa-map-marker-alt" style="color: #0056b3; margin-right: 10px; margin-top: 5px;"></i>
+                        <p style="margin: 0; color: #adb5bd; font-size: 14px; line-height: 1.5;">Suite #3400, 10180-101 Street<br>Edmonton, Alberta, T5J 3S4</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <i class="fas fa-envelope" style="color: #0056b3; margin-right: 10px;"></i>
+                        <p style="margin: 0; color: #adb5bd; font-size: 14px;">info@sumatoconsulting.ca</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright section -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; margin-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <p style="margin: 0; color: #adb5bd; font-size: 14px;">&copy; 2025 Sumato Consulting. All rights reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#" style="color: #adb5bd; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Privacy Policy</a>
+                    <a href="#" style="color: #adb5bd; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

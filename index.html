@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumato Consulting - Business & Technology Advisory</title>
+    <meta name="description" content="Sumato Consulting provides expert business and technology advisory services to help organizations achieve their strategic goals.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Add AOS library for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Enhanced hero section styling -->
+    <style>
+        .hero {
+            background-image: url('images/downloaded/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 180px 0 160px; /* Increased top padding to make room for header and logo */
+            color: #fff;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 40, 0.7);
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons .btn {
+            margin-right: 1rem;
+        }
+        
+        .hero-image {
+            display: none; /* Hide the image as we're using background image instead */
+        }
+        
+        /* Fixed positioning for the header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        /* Properly position the hero logo to avoid overlap */
+        .hero-logo {
+            position: absolute;
+            top: 15px; /* Position it at the top of hero section */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5; /* Above the hero overlay but below the fixed header */
+            display: block; /* Show the logo */
+        }
+        
+        .hero-logo img {
+            max-width: 180px;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 120px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    
+    <!-- Additional responsive styles for testimonials and CTA -->
+    <style>
+        /* Responsive styles for testimonials */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex-direction: column !important;
+            }
+            
+            .testimonial-card > div {
+                flex: 0 0 100% !important;
+                padding: 15px !important;
+            }
+            
+            .testimonial-card img {
+                max-width: 200px !important;
+                margin: 0 auto 20px !important;
+                display: block !important;
+            }
+            
+            .cta h2 {
+                font-size: 2.2rem !important;
+            }
+            
+            .cta p {
+                font-size: 1.1rem !important;
+            }
+        }
+        
+        /* Enhanced Why Choose Sumato section styling */
+        .features {
+            padding: 40px 0; /* Reduced padding/whitespace */
+        }
+        
+        .features .section-header {
+            margin-bottom: 30px;
+        }
+        
+        .features .section-header h2 {
+            position: relative;
+            border: none;
+        }
+        
+        .features .section-header h2:after {
+            display: none;
+        }
+        
+        .section-header h2 {
+            position: relative;
+            border: none;
+        }
+        
+        .section-header h2:after {
+            display: none;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 100px; /* Increased icon container size */
+            height: 100px; /* Increased icon container size */
+            background-color: rgba(0, 86, 179, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 40px; /* Increased icon size */
+            color: #0056b3;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.3rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Enhanced section spacing and consistent padding -->
+    <style>
+        /* Hero section with standardized spacing */
+        .hero {
+            background-image: url('images/downloaded/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 180px 0 160px;
+            color: #fff;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 40, 0.7);
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons .btn {
+            margin-right: 1rem;
+        }
+        
+        .hero-image {
+            display: none; /* Hide the image as we're using background image instead */
+        }
+        
+        /* Features section with consistent spacing */
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .features .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            border: none;
+        }
+        
+        .features .section-header h2 {
+            position: relative;
+            border: none;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+        
+        .features .section-header h2:after,
+        .section-header h2:after {
+            display: none;
+        }
+        
+        .features .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray-600);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Services preview section with consistent spacing */
+        .services-preview {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .services-preview .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            border: none;
+        }
+        
+        .services-preview .section-header h2 {
+            position: relative;
+            border: none;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+        
+        .services-preview .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray-600);
+        }
+        
+        /* Testimonials section with consistent spacing */
+        .testimonials {
+            background-color: #0056b3;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            border: none;
+        }
+        
+        .testimonials .section-header h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            border: none;
+        }
+        
+        .testimonials .section-header p {
+            color: #e6f2ff;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* CTA section with consistent spacing */
+        .cta {
+            background-image: url('images/downloaded/business-advisory.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 80px 0;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 20, 60, 0.65);
+            z-index: 1;
+        }
+        
+        .cta .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content {
+            border: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            border: none;
+        }
+        
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #e6f2ff;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 120px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features,
+            .services-preview,
+            .testimonials,
+            .cta {
+                padding: 60px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+            
+            .feature-card {
+                padding: 25px;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .features,
+            .services-preview,
+            .testimonials,
+            .cta {
+                padding: 50px 0;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                margin-bottom: 30px;
+            }
+            
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    
+    <!-- Metrics section styling -->
+    <style>
+        .metrics-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .metrics-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .metrics-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            border: none;
+        }
+        
+        /* Ensuring no underline appears anywhere */
+        .metrics-header h2:after {
+            display: none;
+        }
+        
+        .metrics-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .metric-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .metric-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .metric-label {
+            font-size: 1.1rem;
+            color: #495057;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .metrics-section {
+                padding: 40px 0;
+            }
+            
+            .metrics-header h2 {
+                font-size: 2rem;
+            }
+            
+            .metrics-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .metric-item {
+                margin-bottom: 30px;
+                min-width: 100%;
+            }
+            
+            .metric-item:last-child {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+
+    <!-- Our Clients section styling with smooth logo slider -->
+    <style>
+        /* Client section styling */
+        .clients-section {
+            padding: 80px 0;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        
+        .clients-section .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .clients-section .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .clients-section .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray-600);
+        }
+        
+        /* Logo slider styling */
+        .client-logo-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        
+        .client-logo-track {
+            display: flex;
+            animation: slide 30s linear infinite;
+        }
+        
+        .client-logo {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 100px;
+            margin: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        
+        .client-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Animation for infinite scrolling */
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-1200px); /* Adjust based on total width of your duplicated logos */
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .client-logo {
+                width: 160px;
+                margin: 0 30px;
+            }
+            
+            .client-logo img {
+                max-height: 70px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .clients-section {
+                padding: 60px 0;
+            }
+            
+            .client-logo {
+                width: 140px;
+                margin: 0 20px;
+            }
+            
+            .client-logo img {
+                max-height: 60px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .clients-section {
+                padding: 50px 0;
+            }
+            
+            .client-logo {
+                width: 120px;
+                margin: 0 15px;
+            }
+            
+            .client-logo img {
+                max-height: 50px;
+            }
+        }
+    </style>
+
+    <!-- Fix for SVG logo display -->
+    <style>
+        .footer-logo img[src$=".svg"] {
+            width: 220px;
+            height: 70px;
+            filter: brightness(0) invert(1);
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <picture>
+                        <source srcset="images/sumato-logo.svg" type="image/svg+xml">
+                        <img src="images/sumato-logo.png" alt="Sumato Consulting Logo" width="180" height="45">
+                    </picture>
+                </a>
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Empowering Business Transformation</h1>
+                <p>We provide expert consulting to help businesses navigate digital transformation and achieve their strategic goals.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary">Explore Services</a>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/downloaded/hero-bg.jpg" alt="Business professionals in a meeting">
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,117.3C672,107,768,117,864,138.7C960,160,1056,192,1152,186.7C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="metrics-section">
+        <div class="container">
+            <div class="metrics-header" data-aos="fade-up">
+                <h2>Sumato in Numbers</h2>
+            </div>
+            <div class="metrics-container" data-aos="fade-up">
+                <div class="metric-item">
+                    <div class="metric-number" data-count="10">10+</div>
+                    <div class="metric-label">Years of Experience</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number" data-count="250">20+</div>
+                    <div class="metric-label">Successful Projects</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number" data-count="95">95%</div>
+                    <div class="metric-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Why Choose Sumato</h2>
+                <p>We bring deep industry expertise and innovative solutions to your most complex business challenges</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Strategic Insights</h3>
+                    <p>Data-driven expertise to help you make informed business decisions and stay ahead of the competition.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Tech Implementation</h3>
+                    <p>Seamless integration of the latest technologies tailored to your specific business needs.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth Acceleration</h3>
+                    <p>Actionable strategies to drive sustainable business growth and maximize your ROI.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Access to seasoned professionals with deep domain knowledge and industry experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Services</h2>
+                <p>Comprehensive consulting solutions for your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/downloaded/business-advisory.jpg" alt="Business Advisory">
+                    <div class="service-content">
+                        <h3>Business Advisory</h3>
+                        <p>Strategic guidance to optimize operations, manage risk, and drive growth.</p>
+                        <a href="services.html#business-advisory" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/downloaded/tech-consulting.jpg" alt="Technology Consulting">
+                    <div class="service-content">
+                        <h3>Technology Consulting</h3>
+                        <p>Expert IT guidance to leverage technology for business advantage.</p>
+                        <a href="services.html#tech-consulting" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/downloaded/digital-transformation.jpg" alt="Digital Transformation">
+                    <div class="service-content">
+                        <h3>Digital Transformation</h3>
+                        <p>End-to-end support for your organization's digital evolution.</p>
+                        <a href="services.html#digital-transformation" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="services-cta" data-aos="fade-up" data-aos-delay="400">
+                <a href="services.html" class="btn btn-secondary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Clients</h2>
+                <p>Trusted by leading organizations across industries</p>
+            </div>
+            
+            <div class="client-logo-slider" data-aos="fade-up">
+                <div class="client-logo-track">
+                    <div class="client-logo">
+                        <img src="images/clients/BCInvestment.jpg" alt="BC Investment Logo" title="BC Investment">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/clients/Convverge.jpg" alt="Convverge Logo" title="Convverge">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/clients/Gov MB.jpg" alt="Manitoba Logo" title="Province of Manitoba">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/clients/GovCanada.png" alt="Government of Canada Logo" title="Government of Canada">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/clients/CWB.jpg" alt="CWB Financial Group Logo" title="CWB Financial Group">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/clients/GocBC.jpg" alt="British Columbia Logo" title="Province of British Columbia">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/clients/APEXUtilities.png" alt="APEX Utilities Logo" title="APEX Utilities">
+                    </div>
+                    <!-- Duplicate logos for infinite scrolling effect -->
+                    <div class="client-logo">
+                        <img src="images/clients/BCInvestment.jpg" alt="BC Investment Logo" title="BC Investment">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/clients/Convverge.jpg" alt="Convverge Logo" title="Convverge">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/clients/Gov MB.jpg" alt="Manitoba Logo" title="Province of Manitoba">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" style="background-color: #0056b3; color: white; padding: 80px 0; position: relative; overflow: hidden;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" style="text-align: center; margin-bottom: 50px; border: none;">
+                <h2 style="color: white; font-size: 2.5rem; margin-bottom: 15px; position: relative;">Client Success Stories</h2>
+                <p style="color: #e6f2ff; font-size: 1.1rem;">Hear what our clients say about working with Sumato Consulting</p>
+            </div>
+            
+            <!-- Testimonials slider container -->
+            <div class="testimonial-slider" id="testimonial-slider" style="position: relative;">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide active" style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 40px; position: relative; margin-bottom: 30px; display: block;">
+                    <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 20px; color: #e6f2ff; line-height: 1.6;">"Sumato's strategic guidance helped us navigate our digital transformation journey with confidence. Their team's expertise was invaluable to our success."</p>
+                    <div>
+                        <h4 style="margin: 0; color: white; font-size: 1.2rem;">Tope Akindele</h4>
+                        <p style="margin: 0; color: #add8e6; font-size: 0.9rem;">Snr. Business Consultant, Govt. of Alberta</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-slide" style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 40px; position: relative; margin-bottom: 30px; display: none;">
+                    <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 20px; color: #e6f2ff; line-height: 1.6;">"Working with Sumato Consulting transformed our approach to business intelligence. They delivered solutions that exceeded our expectations."</p>
+                    <div>
+                        <h4 style="margin: 0; color: white; font-size: 1.2rem;">Tim Bose</h4>
+                        <p style="margin: 0; color: #add8e6; font-size: 0.9rem;">Lead Business Solution Consultant</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-slide" style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 40px; position: relative; margin-bottom: 30px; display: none;">
+                    <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 20px; color: #e6f2ff; line-height: 1.6;">"The team at Sumato provided exceptional insights that helped us optimize our operations and significantly reduce costs while improving service quality."</p>
+                    <div>
+                        <h4 style="margin: 0; color: white; font-size: 1.2rem;">Akii Chawla</h4>
+                        <p style="margin: 0; color: #add8e6; font-size: 0.9rem;">Lead Analyst</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation dots -->
+            <div class="testimonial-dots" style="text-align: center; margin-top: 30px;">
+                <span class="dot active" onclick="currentSlide(1)" style="display: inline-block; width: 10px; height: 10px; background-color: white; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+                <span class="dot" onclick="currentSlide(2)" style="display: inline-block; width: 10px; height: 10px; background-color: rgba(255,255,255,0.5); border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+                <span class="dot" onclick="currentSlide(3)" style="display: inline-block; width: 10px; height: 10px; background-color: rgba(255,255,255,0.5); border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+            </div>
+        </div>
+        
+        <!-- Script for testimonial slider -->
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("testimonial-slide");
+                let dots = document.getElementsByClassName("dot");
+                
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                    dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
+                }
+                
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                dots[slideIndex-1].style.backgroundColor = "white";
+            }
+            
+            // Auto-rotate slides every 5 seconds
+            setInterval(function() {
+                slideIndex++;
+                if (slideIndex > 3) {slideIndex = 1}
+                showSlides(slideIndex);
+            }, 5000);
+        </script>
+    </section>
+
+    <section class="cta" style="background-image: url('images/downloaded/business-advisory.jpg'); background-size: cover; background-position: center; position: relative; padding: 100px 0; color: #fff; text-align: center;">
+        <!-- Less dark overlay to improve visibility -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 20, 60, 0.65); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="cta-content" data-aos="fade-up" style="border: none;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 20px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3); position: relative; border: none;">Ready to transform your business?</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 30px; color: #e6f2ff; max-width: 700px; margin-left: auto; margin-right: auto;">Let's discuss how Sumato Consulting can help you achieve your strategic goals.</p>
+                <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px; border-radius: 30px; background-color: #ff6b00; border: none; display: inline-block; text-decoration: none; color: white; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with improved layout and spacing -->
+    <footer class="footer" style="background-color: #343a40; color: #fff; padding: 60px 0 0;">
+        <div class="container">
+            <div class="row" style="display: flex; flex-wrap: wrap;">
+                <!-- Column 1: Logo and description -->
+                <div class="footer-col" style="flex: 0 0 33%; padding-right: 30px; margin-bottom: 30px;">
+                    <a href="index.html" class="footer-logo" style="display: block; text-align: left; margin-bottom: 15px;">
+                        <img src="images/sumato-logo-white-fixed.svg" alt="Sumato Consulting Logo" width="180" height="60" style="margin-left: 0;">
+                    </a>
+                    <p style="margin-bottom: 20px; line-height: 1.6; color: #adb5bd; font-size: 14px;">
+                        Empowering business transformation with expert advisory services and innovative solutions for sustainable growth.
+                    </p>
+                    <div style="display: flex; align-items: center; color: #adb5bd; font-size: 14px;">
+                        <a href="https://www.linkedin.com/company/sumatoconsulting/" target="_blank" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; transition: color 0.3s ease;">
+                            <i class="fab fa-linkedin-in" style="font-size: 16px; margin-right: 10px; color: #0056b3;"></i>
+                            <span style="transition: color 0.3s ease;">Connect with us on LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col" style="flex: 0 0 20%; margin-bottom: 30px;">
+                    <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Company</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;"><a href="about.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">About Us</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Services</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about.html#careers" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Careers</a></li>
+                        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Services -->
+                <div class="footer-col" style="flex: 0 0 20%; margin-bottom: 30px;">
+                    <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Services</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;"><a href="services.html#ai-ml" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">AI & ML Solutions</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#digital-transformation" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Digital Transformation</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#data-analytics" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Data Analytics</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#it-infrastructure" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">IT Infrastructure</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#devops" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">DevOps & CI/CD</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#erp" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">ERP Implementation</a></li>
+                        <li style="margin-bottom: 10px;"><a href="services.html#process-automation" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Process Automation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col" style="flex: 0 0 27%; margin-bottom: 30px;">
+                    <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Contact Us</h4>
+                    <div style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                        <i class="fas fa-map-marker-alt" style="color: #0056b3; margin-right: 10px; margin-top: 5px;"></i>
+                        <p style="margin: 0; color: #adb5bd; font-size: 14px; line-height: 1.5;">Suite #3400, 10180-101 Street<br>Edmonton, Alberta, T5J 3S4</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <i class="fas fa-envelope" style="color: #0056b3; margin-right: 10px;"></i>
+                        <p style="margin: 0; color: #adb5bd; font-size: 14px;">info@sumatoconsulting.ca</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright section -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; margin-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <p style="margin: 0; color: #adb5bd; font-size: 14px;">&copy; 2025 Sumato Consulting. All rights reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#" style="color: #adb5bd; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Privacy Policy</a>
+                    <a href="#" style="color: #adb5bd; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Sumato Consulting",
+      "url": "https://www.sumatoconsulting.com",
+      "logo": "https://www.sumatoconsulting.com/images/sumato-logo.svg",
+      "image": "https://www.sumatoconsulting.com/images/downloaded/hero-bg.jpg",
+      "description": "Sumato Consulting provides expert business and technology advisory services to help organizations achieve their strategic goals.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Business Avenue",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10001",
+        "addressCountry": "US"
+      },
+      "telephone": "+1 (555) 123-4567",
+      "email": "info@sumatoconsulting.com",
+      "priceRange": "$$$",
+      "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
+      "sameAs": [
+        "https://www.linkedin.com/company/sumatoconsulting",
+        "https://www.twitter.com/sumatoconsulting",
+        "https://www.facebook.com/sumatoconsulting",
+        "https://www.instagram.com/sumatoconsulting"
+      ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "40.7128",
+          "longitude": "-74.0060"
+        },
+        "geoRadius": "50000"
+      },
+      "services": [
+        {
+          "@type": "Service",
+          "name": "Business Advisory",
+          "description": "Strategic guidance to optimize operations, manage risk, and drive growth."
+        },
+        {
+          "@type": "Service",
+          "name": "Technology Consulting",
+          "description": "Expert IT guidance to leverage technology for business advantage."
+        },
+        {
+          "@type": "Service",
+          "name": "Digital Transformation",
+          "description": "End-to-end support for your organization's digital evolution."
+        }
+      ]
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sumato Consulting Inc.</title>
+    <meta name="description" content="Get in touch with the Sumato Consulting team. We're here to answer your questions and help you transform your business with our innovative IT solutions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Adding a background image to the contact page header -->
+    <style>
+        .page-header {
+            background-image: url('images/downloaded/contact-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 160px 0 80px;
+            color: #fff;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+            padding-top: 20px;
+        }
+        
+        .page-header h1, 
+        .page-header .breadcrumb,
+        .page-header .breadcrumb a {
+            color: #fff;
+        }
+        
+        .page-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+        
+        /* Enhanced contact section styling */
+        .contact-section {
+            padding: 80px 0;
+            background-color: #f7f9fc;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            border: none;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+            position: relative;
+            border: none;
+        }
+        
+        .section-title:after {
+            display: none;
+        }
+        
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 86, 179, 0.15);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+            border: none;
+        }
+        
+        .contact-info h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #fff;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info-item i {
+            font-size: 1.5rem;
+            margin-right: 20px;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .contact-info-content {
+            flex: 1;
+        }
+        
+        .contact-info-content h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        
+        .contact-info-content p {
+            margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-info-content a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info-content a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: white;
+            color: #0056b3;
+        }
+        
+        .contact-form-wrapper {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .contact-form-wrapper h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #0056b3;
+            position: relative;
+            padding-bottom: 15px;
+            border: none;
+        }
+        
+        .contact-form-wrapper h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #0056b3;
+        }
+        
+        .form-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group:nth-child(3),
+        .form-group:nth-child(4),
+        .form-group:nth-child(5) {
+            grid-column: 1 / 3;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .form-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background-color: #0056b3;
+            border: none;
+        }
+        
+        .form-button:hover {
+            background-color: #004494;
+        }
+        
+        .contact-map {
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .contact-grid {
+                flex-direction: column;
+            }
+            
+            .form-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group:nth-child(3),
+            .form-group:nth-child(4),
+            .form-group:nth-child(5) {
+                grid-column: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 60px 0;
+            }
+            
+            .contact-info, 
+            .contact-form-wrapper {
+                padding: 30px;
+            }
+            
+            .contact-map {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .contact-section {
+                padding: 50px 0;
+            }
+            
+            .contact-info, 
+            .contact-form-wrapper {
+                padding: 25px;
+            }
+            
+            .contact-map {
+                height: 300px;
+            }
+        }
+    </style>
+    
+    <!-- Enhanced FAQ section styling -->
+    <style>
+        .faq-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .faq-section .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            border: none;
+        }
+        
+        .faq-section .section-title {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+            position: relative;
+            border: none;
+        }
+        
+        .faq-section .section-title:after {
+            display: none;
+        }
+        
+        .faq-section .section-subtitle {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray-600);
+        }
+        
+        .faq-accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active {
+            box-shadow: 0 5px 15px rgba(0,86,179,0.1);
+        }
+        
+        .faq-question {
+            padding: 20px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: #f7f9fc;
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+            transition: all 0.3s;
+        }
+        
+        .faq-item.active .faq-question h3 {
+            color: #0056b3;
+            font-weight: 600;
+        }
+        
+        .faq-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: #f1f5fa;
+            color: #0056b3;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            background-color: #0056b3;
+            color: #fff;
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 30px 25px;
+            max-height: 1000px; /* Adjust as needed */
+        }
+        
+        .faq-answer p {
+            margin-top: 15px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 60px 0;
+            }
+            
+            .faq-question {
+                padding: 15px 20px;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .faq-section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="container">
+                <nav class="navbar">
+                    <a href="index.html" class="logo">
+                        <picture>
+                            <source srcset="images/sumato-logo.svg" type="image/svg+xml">
+                            <img src="images/sumato-logo.png" alt="Sumato Consulting Logo" width="180" height="45">
+                        </picture>
+                    </a>
+                    <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="contact.html" class="btn btn-primary">Get Started</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 data-aos="fade-up">Contact Us</h1>
+                <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                    <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item active">Contact</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">We're here to answer your questions and help you transform your business</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info" data-aos="fade-up">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-info-content">
+                                <h4>Our Location</h4>
+                                <p>Suite #3400, 10180-101 Street NW,<br>T5J 3S4 Edmonton, Alberta</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-info-content">
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:info@sumatoconsulting.ca">info@sumatoconsulting.ca</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <div class="contact-info-content">
+                                <a href="https://www.linkedin.com/company/sumatoconsulting" target="_blank" style="color: white; text-decoration: none;">Connect with us on LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper" data-aos="fade-up">
+                        <h3>Send Us a Message</h3>
+                        
+                        <form id="contact-form" class="contact-form" action="mailto:info@sumatoconsulting.ca" method="post" enctype="text/plain">
+                            <div class="form-content">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Your Email</label>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter subject" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea id="message" name="message" class="form-control" placeholder="Enter your message" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary form-button" id="submit-btn">Send Message</button>
+                                </div>
+                            </div>
+                            <div class="form-response" style="display: none; margin-top: 20px; padding: 15px; border-radius: 5px;">
+                                <p></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="contact-map" data-aos="fade-up">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1185.4673292637497!2d-113.49106538387025!3d53.54293842040746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a02245831f0001%3A0x6d4d49bbb1ac789b!2sSuite%20%233400%2C%2010180-101%20Street%20NW%2C%20Edmonton%2C%20AB%20T5J%203S4%2C%20Canada!5e0!3m2!1sen!2sus!4v1713439058164!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Find answers to common questions about our services and processes</p>
+                </div>
+                
+                <div class="faq-accordion" data-aos="fade-up">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I get started with Sumato Consulting's services?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Getting started is easy! Simply fill out the contact form on this page or call us directly. One of our consultants will reach out to schedule an initial consultation to understand your needs and discuss how we can help. This initial consultation is free and comes with no obligation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer services for small businesses or only enterprise clients?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We work with organizations of all sizes, from small businesses to large enterprises. Our solutions are scalable and can be tailored to fit your specific needs and budget. We believe that businesses of any size can benefit from the right technology solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How long does a typical IT project with Sumato take to complete?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Project timelines vary depending on scope, complexity, and specific requirements. Small projects might take a few weeks, while larger digital transformation initiatives could span several months. During our initial consultation, we'll provide a detailed timeline estimate for your specific project. We pride ourselves on delivering on time and within budget.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you provide ongoing support after project completion?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer various support and maintenance options after project completion. Our team can provide training, documentation, regular check-ins, and technical support to ensure your new systems continue to run smoothly and effectively. We can tailor a support package that meets your specific needs and budget.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What industries do you specialize in?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We have experience across numerous industries, including healthcare, finance, manufacturing, retail, education, and non-profit. Our team brings a wealth of cross-industry knowledge, allowing us to implement best practices and innovative solutions regardless of your sector. Each industry has unique challenges, and we've developed specialized expertise to address those specific needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer" style="background-color: #343a40; color: #fff; padding: 60px 0 0;">
+            <div class="container">
+                <div class="row" style="display: flex; flex-wrap: wrap;">
+                    <!-- Column 1: Logo and description -->
+                    <div class="footer-col" style="flex: 0 0 33%; padding-right: 30px; margin-bottom: 30px;">
+                        <a href="index.html" class="footer-logo" style="display: block; text-align: left; margin-bottom: 15px;">
+                            <img src="images/sumato-logo-white-fixed.svg" alt="Sumato Consulting Logo" width="180" height="60" style="margin-left: 0;">
+                        </a>
+                        <p style="margin-bottom: 20px; line-height: 1.6; color: #adb5bd; font-size: 14px;">
+                            Empowering business transformation with expert advisory services and innovative solutions for sustainable growth.
+                        </p>
+                        <div style="display: flex; align-items: center; color: #adb5bd; font-size: 14px;">
+                            <a href="https://www.linkedin.com/company/sumatoconsulting/" target="_blank" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; transition: color 0.3s ease;">
+                                <i class="fab fa-linkedin-in" style="font-size: 16px; margin-right: 10px; color: #0056b3;"></i>
+                                <span style="transition: color 0.3s ease;">Connect with us on LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2: Quick Links -->
+                    <div class="footer-col" style="flex: 0 0 20%; margin-bottom: 30px;">
+                        <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Company</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="about.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">About Us</a></li>
+                            <li style="margin-bottom: 10px;"><a href="services.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Services</a></li>
+                            <li style="margin-bottom: 10px;"><a href="about.html#careers" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Careers</a></li>
+                            <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 3: Services -->
+                    <div class="footer-col" style="flex: 0 0 20%; margin-bottom: 30px;">
+                        <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Services</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="services.html#ai-ml" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">AI & ML Solutions</a></li>
+                            <li style="margin-bottom: 10px;"><a href="services.html#digital-transformation" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Digital Transformation</a></li>
+                            <li style="margin-bottom: 10px;"><a href="services.html#data-analytics" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Data Analytics</a></li>
+                            <li style="margin-bottom: 10px;"><a href="services.html#it-infrastructure" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">IT Infrastructure</a></li>
+                            <li style="margin-bottom: 10px;"><a href="services.html#devops" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">DevOps & CI/CD</a></li>
+                            <li style="margin-bottom: 10px;"><a href="services.html#erp" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">ERP Implementation</a></li>
+                            <li style="margin-bottom: 10px;"><a href="services.html#process-automation" style="color: #adb5bd; text-decoration: none; transition: all 0.3s ease; font-size: 14px;">Process Automation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 4: Contact Info -->
+                    <div class="footer-col" style="flex: 0 0 27%; margin-bottom: 30px;">
+                        <h4 style="color: #fff; font-size: 18px; margin-bottom: 20px; font-weight: 600;">Contact Us</h4>
+                        <div style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color: #0056b3; margin-right: 10px; margin-top: 5px;"></i>
+                            <p style="margin: 0; color: #adb5bd; font-size: 14px; line-height: 1.5;">Suite #3400, 10180-101 Street<br>Edmonton, Alberta, T5J 3S4</p>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-envelope" style="color: #0056b3; margin-right: 10px;"></i>
+                            <p style="margin: 0; color: #adb5bd; font-size: 14px;">info@sumatoconsulting.ca</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Copyright section -->
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; margin-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap;">
+                    <p style="margin: 0; color: #adb5bd; font-size: 14px;">&copy; 2025 Sumato Consulting. All rights reserved.</p>
+                    <div style="display: flex; gap: 20px;">
+                        <a href="#" style="color: #adb5bd; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Privacy Policy</a>
+                        <a href="#" style="color: #adb5bd; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- FAQ JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            if (faqItems.length > 0) {
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    const answer = item.querySelector('.faq-answer');
+                    const toggle = item.querySelector('.faq-toggle i');
+                    
+                    // Set initial state
+                    answer.style.maxHeight = '0';
+                    
+                    question.addEventListener('click', function() {
+                        // Close all items first
+                        faqItems.forEach(otherItem => {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+                            const otherToggle = otherItem.querySelector('.faq-toggle i');
+                            otherToggle.className = 'fas fa-plus';
+                        });
+                        
+                        // Open current item
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 50 + 'px';
+                        toggle.className = 'fas fa-minus';
+                    });
+                });
+                
+                // Open first FAQ item by default
+                const firstItem = faqItems[0];
+                firstItem.classList.add('active');
+                firstItem.querySelector('.faq-answer').style.maxHeight = 
+                    firstItem.querySelector('.faq-answer').scrollHeight + 50 + 'px';
+                firstItem.querySelector('.faq-toggle i').className = 'fas fa-minus';
+            }
+        });
+    </script>
+    
+    <!-- Contact Form JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const formResponse = document.querySelector('.form-response');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // The form will automatically open the mail client with the mailto: action
+                    
+                    // Show success message
+                    setTimeout(function() {
+                        formResponse.style.display = 'block';
+                        formResponse.style.backgroundColor = '#d4edda';
+                        formResponse.style.color = '#155724';
+                        formResponse.querySelector('p').textContent = 'Your message is being prepared to send to info@sumatoconsulting.ca.';
+                    }, 500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
